@@ -31,7 +31,7 @@ class Question(Updated):
 
     class Meta:
         verbose_name = _("Question")
-        verbose_name_plurar = _("Questions")
+        verbose_name_plural = _("Questions")
         ordering = ['id']
 
     SCALE = (
@@ -59,12 +59,12 @@ class Question(Updated):
 
 class Answer(Updated):
 
-     class Meta:
+    class Meta:
         verbose_name = _("Answer")
-        verbose_name_plurar = _("Answers")
+        verbose_name_plural = _("Answers")
         ordering = ['id']
 
     question = models.ForeignKey(Question, related_name='answer', on_delete=models.DO_NOTHING)
     answer_text = models.CharField(max_length=255, verbose_name=_("Answer Text"))
     is_right = models.BooleanField(default=False)
-    #test
+    
